@@ -9,6 +9,7 @@ var {
   TouchableHighlight,
   Animated,
   ViewPropTypes,
+  Text
 } = ReactNative;
 
 var MaterialSwitch = createReactClass({
@@ -246,6 +247,9 @@ var MaterialSwitch = createReactClass({
             width: this.props.switchWidth,
             borderRadius: this.props.switchHeight/2,
           }}/>
+        <View style={{position: 'absolute', top: 15, left: 80, width: 90, height: 30, alignItems: 'center', justifyContent: 'center'}}>
+          <Text style={[{backgroundColor: 'transparent', textAlign: 'center'}, this.props.textStyle]}>{this.state.state ? 'Müsait' : 'Meşgul'}</Text>
+        </View>
         <TouchableHighlight {...pressHandlers} underlayColor='transparent' activeOpacity={1} style={{
             height: Math.max(this.props.buttonRadius*2+doublePadding, this.props.switchHeight+doublePadding),
             width: this.props.switchWidth+doublePadding,
